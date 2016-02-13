@@ -18,17 +18,25 @@ public class StackTest {
 	 */
 	@Test
 	public void testPush() {
-		fail("Not yet implemented");
+		st.push(3);
+		assertEquals(3, st.top());
 	}
 
 	@Test
 	public void testPop() {
-		fail("Not yet implemented");
+		st.push(4);
+		assertEquals(4, st.pop());
+		st.pop();
+		assertEquals(-1, st.pop());
 	}
 
 	@Test
 	public void testTop() {
-		fail("Not yet implemented");
+		st.push(5);
+		st.push(6);
+		st.push(7);
+		st.pop();
+		assertEquals(6, st.top());
 	}
 
 }
