@@ -19,9 +19,12 @@ public class Stack {
 	private Node top;
 	private int size;
 	
+	private LinkedList ll;
+	
 	public Stack(){
 		top = null;
 		size = 0;
+		ll = new LinkedList();
 	}
 	
 	public boolean isEmpty(){
@@ -34,17 +37,22 @@ public class Stack {
 	
 	// part 3: complete
 	public void push(int o){
-
+		ll.addAtHead(o);
 	}
 	
 	// part 3: complete
 	public int pop() throws StackException{
-		return -1; // dummy remove
+		return ll.removeAtHead();
+		// returns -1 if empty
 	}
 	
 	// part 3: complete
 	public int top() throws StackException{
-		return -1; // dummy remove
+		// pop and push carried out to get value
+		// no way of accessing head node via methods
+		int head = pop();
+		push(head);
+		return head;
 	}
 	
 	
