@@ -30,27 +30,40 @@ public class LQueue {
 	
 	// Part 3: complete	
 	public boolean isEmpty(){
-		return false; // dummy value
+		return head == null;
 	}
 	
 	// Part 3: complete
 	public int size(){
-		return -1; // dummy value 
+		return size;
 	}
 	
 	// Part 3: complete
 	public void enqueue(Object o){
-
+		Node prevTail = tail;
+		tail = new Node(o);
+		if (isEmpty()) {
+			head = tail;
+		} else {
+			prevTail.next = tail;
+		}
+		size++;
 	}
 	
 	// Part 3: complete	
 	public Object dequeue() throws QueueException{
-		return null; // dummy value
+		if (isEmpty()) throw new QueueException("Empty Queue");
+		Object o = head.element;
+		head = head.next;
+		size--;
+		if (isEmpty()) tail = null;	// Avoid loitering
+		return o;
 	}
 	
 	// Part 3: complete
 	public Object front() throws QueueException{
-		return null; // dummy value
+		if (isEmpty()) throw new QueueException("Empty Queue");
+		return head.element;
 	}
 	
 }

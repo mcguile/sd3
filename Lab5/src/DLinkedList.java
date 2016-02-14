@@ -126,7 +126,19 @@ public class DLinkedList {
 	
 	// Part 4: complete
 	public void reverse(){
+		Node temp = headNode;
+		headNode = tailNode;
+		tailNode = temp;
 		
+		Node current = headNode;
+		
+		// swap next and prev elements for all nodes
+		while (current != null) {
+			temp = current.nextNode;
+			current.nextNode = current.prevNode;
+			current.prevNode = temp;
+			current = current.nextNode;
+		}
 	}	
 
 }
