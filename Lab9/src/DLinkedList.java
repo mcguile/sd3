@@ -223,7 +223,7 @@ public class DLinkedList {
 		d.addAtHead(5);
 		d.addAtHead(7);
 		d.addAtHead(4);
-		d.addAtHead(10);
+		d.addAtHead(1);
 		System.out.println("Before sorting: " + d); // this will call the toString method
 		d.insertionSort();
 		System.out.println("After sorting: " + d);
