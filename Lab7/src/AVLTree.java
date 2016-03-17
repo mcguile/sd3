@@ -126,7 +126,7 @@ public class AVLTree {
 		// left-left
 		if(balance > 1 && value < n.getLeftChild().getValue())
 			return rotateRight(n);
-		//right-right
+		// right-right
 		if(balance < -1 && value > n.getRightChild().getValue())
 			return rotateLeft(n);	
 		// DOUBLE ROTATIONS INNER CASES 
